@@ -8,7 +8,7 @@ const ProductGrid = ({ discs, handleDelete }) => {
       {discs.map((disc) => (
         <div key={disc.id} className="border p-4 rounded-lg bg-white">
           <Link href={`./${disc.id}`}>
-            <img src={disc.image} alt={disc.name} className="w-full h-48 object-cover mb-4" />
+            <img src={disc.image} alt={disc.name} className="w-full h-50 object-cover mb-4" />
           </Link>
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-2xl font-bold flex-grow-0 truncate">{disc.name}</h2>
