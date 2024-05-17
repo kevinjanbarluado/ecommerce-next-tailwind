@@ -46,7 +46,7 @@ const Page = ({ params }) => {
       <Navbar />
       <div className="flex flex-1 items-center justify-center overflow-hidden relative">
         <div className="w-3/4 h-3/4 bg-white border rounded-lg shadow-xl overflow-hidden flex">
-          <div className="w-1/2 h-full">
+          <div className="w-1/2 h-full flex items-center justify-center">
             <img src={disc.image} alt={disc.name} className="w-75 h-full object-cover" />
           </div>
           <div className="w-1/2 p-6 flex flex-col justify-between border-r-8 border-red-800 bg-slate-100">
