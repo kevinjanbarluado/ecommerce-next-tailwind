@@ -18,7 +18,8 @@ const ModalForm = ({ addDisc, closeModal }) => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    if (file && file.size <= 5 * 1024 * 1024) { // 5MB limit
+    // 5MB limit
+    if (file && file.size <= 5 * 1024 * 1024) {
       const reader = new FileReader();
       reader.onloadend = () => {
         setFormData({ ...formData, image: reader.result });
@@ -37,7 +38,7 @@ const ModalForm = ({ addDisc, closeModal }) => {
 
   return (
     <div className="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center">
-      <div className="bg-white p-6 rounded-lg w-2/4 h-3/4 overflow-auto">
+      <div className="bg-white p-6 rounded-lg w-11/12 md:w-2/4 h-3/4 overflow-auto">
         <h2 className="text-2xl mb-4">Create New Disc</h2>
         <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -69,14 +70,14 @@ const ModalForm = ({ addDisc, closeModal }) => {
               <label className="block mb-1">Price ($)</label>
               <input type="number" name="price" value={formData.price} onChange={handleChange} className="w-full p-2 border rounded" required />
             </div>
-            <div className="mb-4 col-span-2">
+            <div className="mb-4 col-span-1 sm:col-span-2">
               <label className="block mb-1">Image</label>
               <input type="file" onChange={handleImageChange} className="w-full p-2 border rounded" accept="image/*" required />
             </div>
           </div>
-          <div className="flex justify-end mt-4">
-            <button type="submit" className="bg-red-800 text-white px-4 py-2 rounded">Create</button>
-            <button type="button" onClick={closeModal} className="ml-4 bg-gray-500 text-white px-4 py-2 rounded">Cancel</button>
+          <div className="flex flex-col sm:flex-row justify-end mt-4">
+            <button type="submit" className="bg-red-800 text-white px-4 py-2 rounded w-full sm:w-auto">Create</button>
+            <button type="button" onClick={closeModal} className="mt-2 sm:mt-0 sm:ml-4 bg-gray-500 text-white px-4 py-2 rounded w-full sm:w-auto">Cancel</button>
           </div>
         </form>
       </div>
