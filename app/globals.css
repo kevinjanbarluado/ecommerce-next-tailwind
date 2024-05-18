@@ -14,3 +14,20 @@ body {
   font-weight: 700;
   font-style: normal;
 }
+
+@media only screen and (max-width: 768px) {
+  #floating-btn {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    bottom: 1%;
+    transform: translateX(-50%);
+    /* More precise centering */
+  }
+
+  #floating-btn>svg {
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+  }
+}

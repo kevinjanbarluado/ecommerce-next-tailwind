@@ -14,7 +14,7 @@ const Sidebar = ({ uniqueColors, setSort, setFilter, resetFilters, toggleSidebar
   };
 
   return (
-    <div className={`h-full flex flex-col justify-between ${isSidebarOpen ? 'w-1/6 p-4' : 'w-0 overflow-hidden'} transition-width duration-300 border-r`}>
+    <div className={`h-full flex flex-col justify-between ${isSidebarOpen ? 'w-full md:w-1/6 p-4' : 'w-0 overflow-hidden'} transition-width duration-300 border-r`}>
       {isSidebarOpen && (
         <>
           <div>
@@ -54,6 +54,7 @@ const Sidebar = ({ uniqueColors, setSort, setFilter, resetFilters, toggleSidebar
         </>
       )}
       <button
+        id='floating-btn'
         onClick={toggleSidebar}
         className="bg-red-800 text-white p-2 rounded-full absolute bottom-4 left-4"
         style={{ zIndex: 10 }}
